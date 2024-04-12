@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./:/root/take_home_project
+    command: ["python", "root/take_home_project/app.py"]
+    ports:
+      - "8888:8888"
+    env_file:
+      - ./local.env
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:15.2
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./local.env

@@ -1,0 +1,7 @@
+psycopg2-binary==2.9.3
+dash
+dash-daq
+pandas
+plotly
+gunicorn
+datetime
